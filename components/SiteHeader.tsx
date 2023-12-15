@@ -35,7 +35,7 @@ export default function SiteHeader() {
         className={'fixed inset-0 top-4 w-[95%] sm:w-[90%] mx-auto bg-slate-50 font-medium text-gray-900 flex max-sm:justify-between gap-4 p-4 px-6 max-w-7xl items-end justify-between font-mono h-14 overflow-hidden z-25 shadow rounded-md'}
         variants={{
           long: { maxWidth: 1280 },
-          short: { maxWidth: 350 },
+          short: { maxWidth: 400 },
           hideNav: {
             height: 56,
             alignItems: 'center',

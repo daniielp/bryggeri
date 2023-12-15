@@ -37,7 +37,9 @@ function Heading({ className, alignment, heading, description, children, ...prop
                 </h1>
             </Typography>
             <Typography asChild variant="subheading" size="medium" className='mt-6'>
-                {description}
+                <p>
+                    {description}
+                </p>
             </Typography>
             {children}
         </div>

@@ -21,7 +21,7 @@ function Process() {
                 >
                     <div className='flex gap-4 mt-6'>
                         <Button variant="outline">
-                            <Link href="/hvilken-ol-er-du">
+                            <Link href="/bryggeriprocessen">
                                 Læs mere om vores bryggeriprocess
                             </Link>
                         </Button>

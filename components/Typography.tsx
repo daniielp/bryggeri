@@ -11,9 +11,9 @@ const typographyVariants = cva("", {
             paragraph: "text-slate-700"
         },
         size: {
-            large: "text-6xl leading-16",
-            medium: "text-2xl leading-10",
-            small: "text-base leading-6"
+            large: "text-4xl md:text-6xl leading-16",
+            medium: "text-base md:text-2xl",
+            small: "text-sm md:text-base "
         },
     },
     defaultVariants: {
