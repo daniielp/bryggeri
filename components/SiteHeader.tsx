@@ -11,6 +11,7 @@ import React from "react";
 import * as Popover from '@radix-ui/react-popover';
 import * as Accordion from "@radix-ui/react-accordion";
 import Button from "./Button";
+import Image from "next/image";
 
 export default function SiteHeader() {
   const [showNav, setShowNav] = useState<boolean>(false);
@@ -32,7 +33,7 @@ export default function SiteHeader() {
   return (
     <header>
       <motion.nav
-        className={'fixed inset-0 top-4 w-[95%] sm:w-[90%] mx-auto bg-slate-50 font-medium text-gray-900 flex max-sm:justify-between gap-4 p-4 px-6 max-w-7xl items-end justify-between font-mono h-14 overflow-hidden z-25 shadow rounded-md'}
+        className={'fixed z-30 inset-0 top-4 w-[95%] sm:w-[90%] mx-auto bg-slate-50 font-medium text-gray-900 flex max-sm:justify-between gap-4 p-4 px-6 max-w-7xl items-end justify-between font-mono h-14 z-25 shadow rounded-md'}
         variants={{
           long: { maxWidth: 1280 },
           short: { maxWidth: 400 },
@@ -56,8 +57,8 @@ export default function SiteHeader() {
           damping: 14,
         }}
       >
-        <Link href="/">
-          LOGO
+        <Link href="/" className="">
+          <Image className="pt-[60%] z-100" src="/logo.png" alt={siteConfig.name} width={100} height={100} />
         </Link>
 
         <motion.ul
@@ -95,7 +96,7 @@ export default function SiteHeader() {
                   </Popover.Trigger>
                   <Popover.Portal>
                     <Popover.Content
-                      className="rounded p-5 w-screen max-w-max bg-white ring-1 ring-gray-900/5 shadow-lg"
+                      className="rounded z-50 p-5 w-screen max-w-max bg-white ring-1 ring-gray-900/5 shadow-lg"
                       sideOffset={7}
                     >
                       <div className="w-screen max-w-sm flex-auto rounded-3xl text-sm leading-6">
@@ -158,28 +159,7 @@ export default function SiteHeader() {
           ))}
         </motion.ul>
 
-        <motion.div
-          className="[--display-from:none][--display-to:inline-block] "
-          variants={{
-            hidden: {
-              display: 'var(--display-from, none)',
-              transition: { delay: 0, duration: 0.3 },
-            },
-            visible: {
-              display: 'var(--display-to)',
-              transition: { delay: 0.2, duration: 0.3 },
-            },
-          }}
-          initial="hidden"
-          animate={hidden ? 'visible' : 'hidden'}
-        >
-
-          <Button asChild>
-            <Link href="/hvilken-ol-er-du" className="w-full">
-              Hvilken øl er du?
-            </Link>
-          </Button>
-        </motion.div>
+        
         <Toogle.Root
           className="rounded-full min-w-[40px] sm:hidden"
           aria-label="Toggle navigation"
