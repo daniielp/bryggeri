@@ -4,7 +4,6 @@ import { slugify } from "@/lib/utils"
 import Image from "next/image"
 import Newsletter from "./Newsletter"
 import Typography from "./Typography"
-import Link from "next/link"
 
 function SiteFooter() {
     return (
@@ -38,9 +37,9 @@ function SiteFooter() {
                                         {siteConfig.footerNav.experiences.map((item) => (
                                             <li key={item.name}>
                                                 <Typography asChild>
-                                                    <Link href={item.href} className="hover:text-gray-900">
+                                                    <a href={item.href} className="hover:text-gray-900">
                                                         {item.name}
-                                                    </Link>
+                                                    </a>
                                                 </Typography>
 
                                             </li>
@@ -55,9 +54,9 @@ function SiteFooter() {
                                         {siteConfig.footerNav.products.map((item) => (
                                             <li key={item.name}>
                                                 <Typography asChild>
-                                                    <Link href={`/produkter/${slugify(item.name)}`} className="hover:text-gray-900">
+                                                    <a href={`/produkter/${slugify(item.name)}`} className="hover:text-gray-900">
                                                         {item.name}
-                                                    </Link>
+                                                    </a>
                                                 </Typography>
                                                 
                                             </li>
@@ -72,9 +71,9 @@ function SiteFooter() {
                                         {siteConfig.footerNav.about.map((item) => (
                                             <li key={item.name}>
                                                 <Typography asChild>
-                                                    <Link href={item.href} className="hover:text-gray-900">
+                                                    <a href={item.href} className="hover:text-gray-900">
                                                         {item.name}
-                                                    </Link>
+                                                    </a>
                                                 </Typography>
                                             </li>
                                         ))}

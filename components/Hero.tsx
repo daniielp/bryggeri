@@ -1,7 +1,6 @@
 import React from 'react'
 import Heading from './Heading'
 import Button from './Button'
-import Link from 'next/link'
 import Image from 'next/image'
 import Container from './Container'
 
@@ -16,14 +15,14 @@ function Hero() {
                 >
                     <div className='flex gap-4 mt-6'>
                         <Button>
-                            <Link href="/hvilken-ol-er-du">
+                            <a href="/hvilken-ol-er-du">
                                 Hvilken øl er du?
-                            </Link>
+                            </a>
                         </Button>
                         <Button variant="outline">
-                            <Link href="/produkter">
+                            <a href="/produkter">
                                 Vores produkter
-                            </Link>
+                            </a>
                         </Button>
                     </div>
                 </Heading>

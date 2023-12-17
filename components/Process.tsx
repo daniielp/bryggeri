@@ -2,7 +2,6 @@ import React from 'react'
 import Heading from './Heading'
 import Image from 'next/image'
 import Button from './Button'
-import Link from 'next/link'
 import Floating from './Floating'
 import Container from './Container'
 
@@ -21,9 +20,9 @@ function Process() {
                 >
                     <div className='flex gap-4 mt-6'>
                         <Button variant="outline">
-                            <Link href="/bryggeriprocessen">
+                            <a href="/bryggeriprocessen">
                                 Læs mere om vores bryggeriprocess
-                            </Link>
+                            </a>
                         </Button>
                     </div>
                 </Heading>

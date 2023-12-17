@@ -7,8 +7,8 @@ export const anledningType = ['festlige lejligheder', 'til aftensmad', 'efter tr
 
 export const FindYourBeerSchema = z.object({
     type: z.enum(beerType).default("lys"),
-    smag: z.enum(smagType),
-    smagsnote: z.enum(smagNote),
-    anledning: z.enum(anledningType),
+    smag: z.enum(smagType, {required_error: "Påkrævet felt"}),
+    smagsnote: z.enum(smagNote, {required_error: "Påkrævet felt"}),
+    anledning: z.enum(anledningType, {required_error: "Påkrævet felt"}),
     email: z.string().optional()
 })

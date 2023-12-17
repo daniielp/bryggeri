@@ -1,7 +1,6 @@
 import Container from '@/components/Container'
 import Heading from '@/components/Heading'
 import React from 'react'
-
 import { products } from '@/config/products'
 import ProductCard from '@/components/ProductCard'
 import { slugify } from '@/lib/utils'

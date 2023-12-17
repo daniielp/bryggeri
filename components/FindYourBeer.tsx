@@ -25,8 +25,8 @@ function FindYourBeer({ className }: FindYourBeerProps) {
                 </Typography>
             </div>
             {isCompleted ? (
-                <div className='col-span-3 flex flex-col justify-center items-center'>
-                    <Typography variant="subheading" size="medium">
+                <div className='col-span-3 flex flex-col justify-center items-center p-8'>
+                    <Typography variant="subheading" size="medium" className='font-bold'>
                         Vi fandt følgende øl der passer til dig
                     </Typography>
                     {getMultipleRandom(products, 1).map((product) =>

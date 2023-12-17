@@ -1,6 +1,5 @@
 import Button from "@/components/Button"
 import Container from "@/components/Container"
-import Link from "next/link"
 
 function NotFound() {
   return (
@@ -11,11 +10,11 @@ function NotFound() {
         <p className="mt-6 text-base leading-7 text-slate-700">Vi kunne ikke finde det du ledte efter.</p>
         <div className="mt-10 flex items-center justify-center gap-x-6">
           <Button asChild variant="link">
-            <Link
+            <a
               href="/"
             >
               Gå til forsiden
-            </Link>
+            </a>
 
           </Button>
         </div>

@@ -1,7 +1,6 @@
 "use client"
 import { ReactNode, useState } from "react"
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
-import Link from "next/link";
 import * as Toogle from '@radix-ui/react-toggle'
 import { cn } from "@/lib/utils";
 import { ChevronUpIcon, ChevronDownIcon } from "@radix-ui/react-icons";
@@ -36,7 +35,7 @@ export default function SiteHeader() {
         className={'fixed z-30 inset-0 top-4 w-[95%] sm:w-[90%] mx-auto bg-slate-50 font-medium text-gray-900 flex max-sm:justify-between gap-4 p-4 px-6 max-w-7xl items-end justify-between font-mono h-14 z-25 shadow rounded-md'}
         variants={{
           long: { maxWidth: 1280 },
-          short: { maxWidth: 400 },
+          short: { maxWidth: 150 },
           hideNav: {
             height: 56,
             alignItems: 'center',
@@ -57,9 +56,9 @@ export default function SiteHeader() {
           damping: 14,
         }}
       >
-        <Link href="/" className="">
+        <a href="/" className="">
           <Image className="pt-[60%] z-100" src="/logo.png" alt={siteConfig.name} width={100} height={100} />
-        </Link>
+        </a>
 
         <motion.ul
           className={cn("w-full [--opacity-from:0.1] [--opacity-to:1] flex-col sm:flex-row items-center justify-end gap-10 max-sm:gap-5 max-sm:pt-10", showNav ? "[--display-from:none] [--display-to:flex]" : "max-sm:[--display-from:none] sm:[--display-to:flex]")}
@@ -84,7 +83,7 @@ export default function SiteHeader() {
           {siteConfig.mainNav.map((menuItem) => (
             menuItem.items.length > 0 ? (
               <li key={menuItem.title}>
-                <Popover.Root>
+                <Popover.Root >
                   <Popover.Trigger asChild>
                     <button
                       className="inline-flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900"
@@ -124,9 +123,9 @@ export default function SiteHeader() {
                                   >
                                     {subItem.items.map((item) =>
                                       <li key={item.title} className="p-4">
-                                        <Link className=" text-slate-700" href={item.href}>
+                                        <a className=" text-slate-700" href={item.href}>
                                           {item.title}
-                                        </Link>
+                                        </a>
                                       </li>
                                     )}
                                   </ul>
@@ -151,9 +150,9 @@ export default function SiteHeader() {
               </li>
             ) : (
               <li key={menuItem.title}>
-                <Link className="inline-flex items-center gap-x-1 text-sm font-semibold leading-6 text-slate-900" href={menuItem.href}>
+                <a className="inline-flex items-center gap-x-1 text-sm font-semibold leading-6 text-slate-900" href={menuItem.href}>
                   {menuItem.title}
-                </Link>
+                </a>
               </li>
             )
           ))}
@@ -174,19 +173,3 @@ export default function SiteHeader() {
     </header >
   )
 }
-
-const ListItem = React.forwardRef(({ children, title, href, ...props }: { children: ReactNode, title: string, href: string, }, forwardedRef) => (
-  <li>
-    <NavigationMenu.Link asChild>
-      <a
-        className="focus:shadow-[0_0_0_2px] focus:shadow-violet7 hover:bg-mauve3 block select-none rounded-[6px] p-3 text-[15px] leading-none no-underline outline-none transition-colors"
-        {...props}
-      >
-        <div className="text-violet12 mb-[5px] font-medium leading-[1.2]">{title}</div>
-        <p className="text-mauve11 leading-[1.4]">{children}</p>
-      </a>
-    </NavigationMenu.Link>
-  </li>
-));
-
-ListItem.displayName = "List Item"
