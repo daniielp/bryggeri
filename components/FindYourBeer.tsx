@@ -5,6 +5,7 @@ import Typography from './Typography'
 import BeerForm from './BeerForm'
 import { products } from '@/config/products'
 import ProductCard from './ProductCard'
+import Image from 'next/image'
 
 export interface FindYourBeerProps extends React.HTMLAttributes<HTMLDivElement> {
 
@@ -16,7 +17,7 @@ function FindYourBeer({ className }: FindYourBeerProps) {
     return (
         <div className={cn('grid grid-cols-1 lg:grid-cols-4 bg-gray-100 w-full rounded-sm overflow-hidden', className)}>
             <div className='col-span-1 bg-amber-50 p-8'>
-                <img src="/img/products/trøjborgbryg-lime.png" className='aspect-auto' />
+                <Image alt="product preview" src="/img/products/trøjborgbryg-lime.png" className='aspect-auto' />
                 <Typography className='font-bold text-center mt-4' variant="subheading" size="medium">
                     Find din perfekte øl
                 </Typography>
